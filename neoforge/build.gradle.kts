@@ -7,6 +7,7 @@ val neoforgeVersion: String by extra
 val neoforgeLoaderRange: String by extra
 val neoforgeMinecraftVersionRange: String by extra
 val modVersion: String by extra
+val architecturyApiVersion: String by extra
 
 architectury {
     platformSetupLoomIde()
@@ -30,6 +31,8 @@ repositories {
 
 dependencies {
     neoForge("net.neoforged:neoforge:$neoforgeVersion")
+
+    implementation("dev.architectury:architectury-neoforge:${architecturyApiVersion}")
 
     common(project(path = ":common")) { isTransitive = false }
     shadowCommon(project(path = ":common", configuration = "transformProductionNeoForge")) { isTransitive = false }
