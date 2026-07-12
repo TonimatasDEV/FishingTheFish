@@ -9,7 +9,9 @@ import org.jspecify.annotations.NonNull;
 public class FTFDataGenerators implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(@NonNull FabricDataGenerator fabricDataGenerator) {
-        
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+
+        pack.addProvider(ItemTagProvider::new);
     }
 
     @Override

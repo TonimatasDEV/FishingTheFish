@@ -4,6 +4,7 @@
   "package": "dev.tonimatas.ftf.mixins",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "FishingHookMixin"
   ],
   "client": [
   ],
