@@ -1,4 +1,4 @@
-package dev.tonimatas.ftf.fabric.data;
+package dev.tonimatas.ftf.fabric.data.providers;
 
 import dev.tonimatas.ftf.registry.ModItems;
 import dev.tonimatas.ftf.registry.ModTags;
@@ -6,14 +6,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.ItemIds;
-import net.minecraft.world.item.Items;
 import org.jspecify.annotations.NonNull;
-import org.jspecify.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-    public ItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+public class FTFItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
+    public FTFItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
     }
 
