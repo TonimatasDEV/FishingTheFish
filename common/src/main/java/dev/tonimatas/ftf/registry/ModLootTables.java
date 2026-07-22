@@ -8,6 +8,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 
 public class ModLootTables {
     public static final ResourceKey<LootTable> EXAMPLE = register("example");
+    public static final ResourceKey<LootTable> CREATURES = register("creatures");
 
     private static ResourceKey<LootTable> register(String id) {
         return ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(FishingTheFish.MOD_ID, "ftf/" + id));

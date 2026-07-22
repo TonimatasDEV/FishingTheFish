@@ -10,6 +10,24 @@
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "#fishingthefish:fishing_rods",
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:luck_of_the_sea",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
           "name": "minecraft:glow_item_frame",
           "weight": 50
         }
