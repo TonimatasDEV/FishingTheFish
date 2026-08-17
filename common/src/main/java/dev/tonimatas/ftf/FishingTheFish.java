@@ -1,5 +1,7 @@
 package dev.tonimatas.ftf;
 
+import dev.architectury.registry.level.entity.EntityAttributeRegistry;
+import dev.tonimatas.ftf.registry.ModAttributes;
 import dev.tonimatas.ftf.registry.ModBlocks;
 import dev.tonimatas.ftf.registry.ModItems;
 import dev.tonimatas.ftf.registry.ModTabs;
@@ -14,6 +16,7 @@ public class FishingTheFish {
 		ModBlocks.BLOCKS.register();
 		ModItems.ITEMS.register();
 		ModTabs.TABS.register();
+		ModAttributes.register();
 
 		LOGGER.info("Fishing correctly.");
 	}
