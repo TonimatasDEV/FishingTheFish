@@ -10,6 +10,6 @@ architectury {
     common("fabric", "neoforge")
 }
 
-//loom {
-//    accessWidenerPath.set(file("src/main/resources/example.accesswidener"))
-//}
+loom {
+    accessWidenerPath.set(file("src/main/resources/ftf.classtweaker"))
+}
