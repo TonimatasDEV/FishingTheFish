@@ -11,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 
 public class ModAttributes {
-    public static final Holder<Attribute> FISHING_SPEED = register("fishing_speed", 0, 0, 600, true);
+    public static final Holder<Attribute> FISHING_SPEED = register("fishing_speed", 0, 0, 300, true);
 
     public static final Holder<Attribute> HOOKING_SPEED = register("hooking_speed", 0, 0, 80, true);
 
