@@ -23,7 +23,7 @@ public class ModAttributes {
 
     private static Holder<Attribute> register(String name, double defaultValue, double minValue, double maxValue, boolean syncedWithClient) {
         Identifier identifier = FishingTheFish.id(name);
-        Attribute entityAttribute = new RangedAttribute(identifier.toLanguageKey(), defaultValue, minValue, maxValue).setSyncable(syncedWithClient);
+        Attribute entityAttribute = new RangedAttribute("attribute." + identifier.toLanguageKey(), defaultValue, minValue, maxValue).setSyncable(syncedWithClient);
         return Registry.registerForHolder(BuiltInRegistries.ATTRIBUTE, identifier, entityAttribute);
     }
 

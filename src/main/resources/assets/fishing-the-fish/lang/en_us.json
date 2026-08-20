@@ -1,0 +1,8 @@
+{
+  "creativeTab.ftf": "Fishing The Fish",
+  "attribute.fishing-the-fish.fishing_speed": "Fishing Speed",
+  "attribute.fishing-the-fish.hooking_speed": "Hooking Speed",
+  "attribute.fishing-the-fish.creature_chance": "Creature Chance",
+  "attribute.fishing-the-fish.loot_chance": "Loot Chance",
+  "attribute.fishing-the-fish.double_hook_chance": "Double Hook Chance"
+}
