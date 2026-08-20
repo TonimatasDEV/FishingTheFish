@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "fishing-the-fish",
+	"version": "${version}",
+	"name": "Fishing The Fish (FTF)",
+	"description": "With this mod you can fish where fish fish for fish :)",
+	"authors": [
+		"TonimatasDEV",
+		"Theblackcat1666"
+	],
+	"contact": {
+		"homepage": "https://github.com/TonimatasDEV/FishingTheFish",
+		"sources": "https://github.com/TonimatasDEV/FishingTheFish"
+	},
+	"license": "GNU General Public License v3",
+	"icon": "assets/fishing-the-fish/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.tonimatas.ftf.FishingTheFish"
+		],
+		"client": [
+			"dev.tonimatas.client.FishingTheFishClient"
+		],
+		"fabric-datagen": [
+			"dev.tonimatas.client.FishingTheFishDataGenerator"
+		]
+	},
+	"mixins": [
+		"fishing-the-fish.mixins.json",
+		{
+			"config": "fishing-the-fish.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
