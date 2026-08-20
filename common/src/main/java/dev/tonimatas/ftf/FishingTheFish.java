@@ -1,10 +1,10 @@
 package dev.tonimatas.ftf;
 
-import dev.architectury.registry.level.entity.EntityAttributeRegistry;
 import dev.tonimatas.ftf.registry.ModAttributes;
 import dev.tonimatas.ftf.registry.ModBlocks;
 import dev.tonimatas.ftf.registry.ModItems;
 import dev.tonimatas.ftf.registry.ModTabs;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,11 +13,15 @@ public class FishingTheFish {
 	public static final String MOD_ID = "fishingthefish";
 
 	public static void init() {
+		ModAttributes.register();
 		ModBlocks.BLOCKS.register();
 		ModItems.ITEMS.register();
 		ModTabs.TABS.register();
-		ModAttributes.register();
 
 		LOGGER.info("Fishing correctly.");
+	}
+
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 }
