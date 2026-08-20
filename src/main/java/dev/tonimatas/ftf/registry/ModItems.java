@@ -10,7 +10,7 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item EXAMPLE = register(ModItemIds.EXAMPLE, (properties) ->
-            new FTFCreatureRod(properties, 550, 50, 40, 20),
+            new FTFCreatureRod(properties, 300, 50, 40, 20),
             new Item.Properties().durability(64));
 
 

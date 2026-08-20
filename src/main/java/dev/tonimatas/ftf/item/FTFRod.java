@@ -1,7 +1,6 @@
 package dev.tonimatas.ftf.item;
 
 import dev.tonimatas.ftf.registry.ModAttributes;
-import dev.tonimatas.ftf.registry.ModTabs;
 import dev.tonimatas.ftf.util.AttributesUtils;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EquipmentSlotGroup;

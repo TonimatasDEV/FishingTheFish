@@ -1,13 +1,17 @@
 package dev.tonimatas.ftf.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import dev.tonimatas.ftf.registry.ModAttributes;
+import dev.tonimatas.ftf.registry.ModItems;
+import dev.tonimatas.ftf.registry.ModLootTables;
 import dev.tonimatas.ftf.registry.ModTags;
+import dev.tonimatas.ftf.util.Constants;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootTable;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -19,15 +23,15 @@ public abstract class FishingHookMixin {
     public abstract @Nullable Player getPlayerOwner();
 
     @Redirect(method = "shouldStopFishing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Ljava/lang/Object;)Z"))
-    private boolean ftf$shouldStopFishing$1(ItemStack instance, Object o) {
+    private boolean ftf$shouldStopFishing(ItemStack instance, Object o) {
         return instance.is(ModTags.Items.FISHING_RODS);
     }
 
     @ModifyArg(method = "retrieve", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/ReloadableServerRegistries$Holder;getLootTable(Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/world/level/storage/loot/LootTable;"))
-    private ResourceKey<LootTable> ftf$retrieve(ResourceKey<LootTable> id) {
-        //if (rod.get().is(ModItems.EXAMPLE.get())) {
-        //    return ModLootTables.EXAMPLE;
-        //}
+    private ResourceKey<LootTable> ftf$retrieve(ResourceKey<LootTable> id, @Local(argsOnly = true, name = "rod") final ItemStack rod) {
+        if (rod.is(ModItems.EXAMPLE)) {
+            return ModLootTables.EXAMPLE;
+        }
 
         return id;
     }
@@ -39,7 +43,7 @@ public abstract class FishingHookMixin {
 
     @ModifyConstant(method = "catchingFish", constant = @Constant(intValue = 100))
     private int ftf$catchingFish$minTimeUntilLure(int constant) {
-        return Math.max(1, ftf$getMaxTimeUntilLure() - 100);
+        return Math.max(20, ftf$getMaxTimeUntilLure() - 50);
     }
 
     @Unique
@@ -47,10 +51,10 @@ public abstract class FishingHookMixin {
         Player player = this.getPlayerOwner();
 
         if (player != null) {
-            return 600 - (int) player.getAttributeValue(ModAttributes.FISHING_SPEED);
+            return Constants.MAX_FISHING_SPEED - (int) player.getAttributeValue(ModAttributes.FISHING_SPEED);
         }
 
-        return 600;
+        return Constants.MAX_FISHING_SPEED;
     }
 
     @ModifyConstant(method = "catchingFish", constant = @Constant(intValue = 80))
