@@ -12,6 +12,7 @@
 		"homepage": "https://github.com/TonimatasDEV/FishingTheFish",
 		"sources": "https://github.com/TonimatasDEV/FishingTheFish"
 	},
+	"accessWidener": "fishing-the-fish.classtweaker",
 	"license": "GNU General Public License v3",
 	"icon": "assets/fishing-the-fish/icon.png",
 	"environment": "*",

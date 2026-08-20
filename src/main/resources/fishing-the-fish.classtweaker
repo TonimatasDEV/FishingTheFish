@@ -1,0 +1,11 @@
+classTweaker v2 official
+
+accessible field net/minecraft/world/entity/projectile/FishingHook DATA_BITING Lnet/minecraft/network/syncher/EntityDataAccessor;
+accessible field net/minecraft/world/entity/projectile/FishingHook nibble I
+accessible field net/minecraft/world/entity/projectile/FishingHook timeUntilLured I
+accessible field net/minecraft/world/entity/projectile/FishingHook timeUntilHooked I
+accessible field net/minecraft/world/entity/projectile/FishingHook fishAngle F
+accessible field net/minecraft/world/entity/projectile/FishingHook hookedIn Lnet/minecraft/world/entity/Entity;
+accessible field net/minecraft/world/entity/projectile/FishingHook lureSpeed I
+extendable method net/minecraft/world/entity/projectile/FishingHook catchingFish (Lnet/minecraft/core/BlockPos;)V
+extendable method net/minecraft/world/entity/projectile/FishingHook shouldStopFishing (Lnet/minecraft/world/entity/player/Player;)Z
